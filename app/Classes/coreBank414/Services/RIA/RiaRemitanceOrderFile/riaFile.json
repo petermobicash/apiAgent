@@ -1,0 +1,125 @@
+{
+ "value": 
+{
+ "Errors": null,
+ "Response": 
+{
+ "Order": 
+{
+ "Ria": 
+{
+ 
+ "ProductID": "111"
+ },
+ "Transaction": 
+{
+ "OrderStatus": "Posted",
+ "OrderDate": "20220707",
+ "OrderTime": "181013",
+ "OrderNo": "TESTCASE-ESP",
+ "PIN": "13010095109",
+ "CountryFrom": "UK",
+ "CountryTo": "MX",
+ "DeliveryMethod": "2",
+ "TransferReason": "Family Assistance",
+ "CustPaymentMethodID": "10",
+ "CustPaymentMethod": "Cash"
+ },
+ "Quotation": 
+{
+ "PaymentCurrency": "GBP",
+ "PaymentAmount": "100.00",
+ "CommissionCurrency": "GBP",
+ "CommissionAmount": "0.00",
+ "CustChargeCurrency": "GBP",
+ "CustChargeAmount": "2.25",
+ "BeneCurrency": "MXN",
+ "BeneAmount": "2398.00"
+ },
+ "Customer": 
+{
+ "RiaInformation": 
+{
+ "CustID": "5156515",
+ "CustTypeID": "10"
+ },
+ "PersonalInformation": 
+{
+ "CustFirstName": "ANA DEL CARMEN",
+ "CustLastName": "NAVAS",
+ "CustDateOfBirth": "19900101",
+ "CustCountryOfBirth": "US",
+ "CustNationality": "US",
+ "CustOccupation": "Developer"
+ },
+ "IdentityDocument": 
+{
+ "CustID1Type": "Passport",
+ "CustID1No": "170378452660",
+ "CustID1IssuedBy": "Police",
+ "CustID1IssuedByCountry": "US",
+ "CustID1IssuedDate": "20170308",
+ "CustID1ExpirationDate": "20320307"
+ },
+ "Residence": 
+{
+ "CustAddress": "103 Avenue Paul Doumedr",
+ "CustCity": "LE PORT MARLY",
+ "CustState": "California",
+ "CustZipCode": "12345",
+ "CustCountryofResidence": "US"
+ },
+ "ContactDetails": 
+{
+ "CustPhoneCountryCode": "ES",
+ "CustPhoneNo": "924777555"
+ }
+ },
+ "SendingPartner": 
+{
+ "SendingCorrespBranchNo": "001"
+ },
+ "Beneficiary": 
+{
+ "RiaInformation": 
+{
+ "BeneTypeID": "10"
+ },
+ "PersonalInformation": 
+{
+ "BeneFirstName": "ESPERANZA",
+ "BeneMiddleName": "JAZMIN",
+ "BeneLastName": "NUNEZ",
+ "BeneLastName2": "SANCHEZ",
+ "BeneNationality": "MX"
+ },
+ 
+ "Residence": 
+{
+ "BeneAddress": "Zibata Queretaro",
+ "BeneCity": "Queretato",
+ "BeneState": "Queretaro",
+ "BeneZipCode": "78560",
+ "BeneCountry": "MX"
+ },
+ "ContactDetails": 
+{
+ "BeneEmailAddress": "testcase@gmail.com"
+ },
+ "BankAccount": 
+{
+ "BankAccountNo": "151610209995",
+ "BankRoutingCode": "091000022",
+ "Valuetype": "Low"
+ }
+ },
+ "PayoutPartner": 
+{
+ "PayingCorrespName": "Stanbic Mobile Money",
+ "PayingCorrespSequenceID": "103",
+ "PayingCorrespID": "0",
+ "PayingCorrespLocID": "0001"
+ }
+ }
+ }
+ }}

@@ -1,0 +1,49 @@
+name: rnit
+description: |-
+
+  API endpoints for managing rnit
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/client/gvmnt/rest/v.0.0.2/rnitnidvalidation
+    metadata:
+      title: 'Handle an incoming request.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      identification:
+        name: identification
+        description: ''
+        required: true
+        example: sunt
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      nid:
+        name: nid
+        description: ''
+        required: true
+        example: placeat
+        type: string
+    responses: []
+    responseFields: []

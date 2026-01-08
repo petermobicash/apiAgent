@@ -1,0 +1,73 @@
+name: Authentication
+description: |-
+
+  API endpoints for managing authentication
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: frunolfsdottir@example.com
+        type: string
+      password:
+        name: password
+        description: ''
+        required: true
+        example: nesciunt
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: voluptatibus
+        type: string
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: bergnaum.louisa@example.com
+        type: string
+      password:
+        name: password
+        description: ''
+        required: true
+        example: cupiditate
+        type: string
+      confirm_password:
+        name: confirm_password
+        description: 'The value and <code>password</code> must match.'
+        required: true
+        example: et
+        type: string
+    responses: []
+    responseFields: []

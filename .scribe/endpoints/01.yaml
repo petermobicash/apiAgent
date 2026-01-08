@@ -1,0 +1,111 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      clientPhoneNumber:
+        name: clientPhoneNumber
+        description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+        required: true
+        example: anvkpkdx
+        type: string
+      amount:
+        name: amount
+        description: 'Must be at least 1000.'
+        required: true
+        example: 206
+        type: integer
+      clientid:
+        name: clientid
+        description: ''
+        required: true
+        example: 12
+        type: integer
+      rra_ref:
+        name: rra_ref
+        description: ''
+        required: true
+        example: 18
+        type: integer
+      tin_no:
+        name: tin_no
+        description: ''
+        required: true
+        example: 7
+        type: integer
+      taxpayer_name:
+        name: taxpayer_name
+        description: ''
+        required: true
+        example: illo
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client/vas/rest/v.0.0.2/meternumbervalidation
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      meterNumber:
+        name: meterNumber
+        description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+        required: true
+        example: adw
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client/vas/rest/v.0.0.2/electricitypayemnent
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      clientId:
+        name: clientId
+        description: ''
+        required: true
+        example: non
+        type: string
+      msisdn:
+        name: msisdn
+        description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+        required: true
+        example: uopcnhs
+        type: string
+      amount:
+        name: amount
+        description: 'Must be at least 500.'
+        required: true
+        example: 165
+        type: integer
+    responses: []
+    responseFields: []

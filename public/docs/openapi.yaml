@@ -1,0 +1,649 @@
+openapi: 3.0.3
+info:
+  title: APIs
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: frunolfsdottir@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: nesciunt
+              required:
+                - email
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: voluptatibus
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: bergnaum.louisa@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: cupiditate
+                confirm_password:
+                  type: string
+                  description: 'The value and <code>password</code> must match.'
+                  example: et
+              required:
+                - name
+                - email
+                - password
+                - confirm_password
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientPhoneNumber:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: anvkpkdx
+                amount:
+                  type: integer
+                  description: 'Must be at least 1000.'
+                  example: 206
+                clientid:
+                  type: integer
+                  description: ''
+                  example: 12
+                rra_ref:
+                  type: integer
+                  description: ''
+                  example: 18
+                tin_no:
+                  type: integer
+                  description: ''
+                  example: 7
+                taxpayer_name:
+                  type: string
+                  description: ''
+                  example: illo
+              required:
+                - clientPhoneNumber
+                - amount
+                - clientid
+                - rra_ref
+                - tin_no
+                - taxpayer_name
+      security: []
+  /api/client/vas/rest/v.0.0.2/meternumbervalidation:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meterNumber:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: adw
+              required:
+                - meterNumber
+      security: []
+  /api/client/vas/rest/v.0.0.2/electricitypayemnent:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientId:
+                  type: string
+                  description: ''
+                  example: non
+                msisdn:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: uopcnhs
+                amount:
+                  type: integer
+                  description: 'Must be at least 500.'
+                  example: 165
+              required:
+                - clientId
+                - msisdn
+                - amount
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - LTSS
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identification:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.'
+                  example: nvapgovy
+              required:
+                - identification
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - LTSS
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identification:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.'
+                  example: utfdj
+                clientId:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 4 characters.'
+                  example: eit
+                amount:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 4 characters.'
+                  example: o
+              required:
+                - identification
+                - clientId
+                - amount
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/rnitnidvalidation:
+    post:
+      summary: 'Handle an incoming request.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - rnit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identification:
+                  type: string
+                  description: ''
+                  example: sunt
+              required:
+                - identification
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - rnit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nid:
+                  type: string
+                  description: ''
+                  example: placeat
+              required:
+                - nid
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/rradocidvalidation:
+    post:
+      summary: 'API endpoints for managing tax collection'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'rra tax collection'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rra_ref:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 30 characters. Must be at least 8 characters.'
+                  example: cx
+              required:
+                - rra_ref
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/cbhinidvalidation:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'rssb mutuelle de sante'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nid:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.'
+                  example: fk
+                yearofcollection:
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - nid
+                - yearofcollection
+      security: []
+  /api/client/gvmnt/rest/v.0.0.2/cbhisendpayment:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'rssb mutuelle de sante'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientPhone:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: aqnt
+                amountPaid:
+                  type: integer
+                  description: 'Must be at least 1000.'
+                  example: 398
+                clientId:
+                  type: integer
+                  description: ''
+                  example: 20
+                nid:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.'
+                  example: ec
+                yearofcollection:
+                  type: integer
+                  description: ''
+                  example: 3
+                name:
+                  type: string
+                  description: ''
+                  example: possimus
+                invoice:
+                  type: integer
+                  description: ''
+                  example: 15
+              required:
+                - clientPhone
+                - amountPaid
+                - clientId
+                - nid
+                - yearofcollection
+                - name
+                - invoice
+      security: []
+  /api/client/vas/rest/v.0.0.2/startimeReplaceable_packages:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - startTimes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                servicecode:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: ''
+              required:
+                - servicecode
+      security: []
+  /api/client/vas/rest/v.0.0.2/startimeRecharge_infos:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - startTimes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                servicecode:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: ''
+              required:
+                - servicecode
+      security: []
+  /api/client/vas/rest/v.0.0.2/starTimeRecharging:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - startTimes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                servicecode:
+                  type: string
+                  description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
+                  example: u
+              required:
+                - servicecode
+      security: []

@@ -1,0 +1,61 @@
+name: LTSS
+description: |-
+
+  API endpoints for managing LTSS
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      identification:
+        name: identification
+        description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.'
+        required: true
+        example: nvapgovy
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      identification:
+        name: identification
+        description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.'
+        required: true
+        example: utfdj
+        type: string
+      clientId:
+        name: clientId
+        description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 4 characters.'
+        required: true
+        example: eit
+        type: string
+      amount:
+        name: amount
+        description: 'Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 4 characters.'
+        required: true
+        example: o
+        type: string
+    responses: []
+    responseFields: []

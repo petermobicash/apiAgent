@@ -1,0 +1,1713 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>APIs Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.8.0.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+        var baseUrl = "http://localhost";
+    </script>
+    <script src="../docs/js/tryitout-3.8.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: August 3 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="authentication">Authentication</h1>
+
+    <p>API endpoints for managing authentication</p>
+
+            <h2 id="authentication-POSTapi-login">POST api/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-login">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"frunolfsdottir@example.com\",
+    \"password\": \"nesciunt\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "frunolfsdottir@example.com",
+    "password": "nesciunt"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-login">
+</span>
+<span id="execution-results-POSTapi-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
+</span>
+<form id="form-POSTapi-login" data-method="POST"
+      data-path="api/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-login"
+                    onclick="tryItOut('POSTapi-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-login"
+                    onclick="cancelTryOut('POSTapi-login');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-login"
+               data-component="body" required  hidden>
+    <br>
+<p>Must be a valid email address.</p>        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-login"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="authentication-POSTapi-register">POST api/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-register">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"voluptatibus\",
+    \"email\": \"bergnaum.louisa@example.com\",
+    \"password\": \"cupiditate\",
+    \"confirm_password\": \"et\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "voluptatibus",
+    "email": "bergnaum.louisa@example.com",
+    "password": "cupiditate",
+    "confirm_password": "et"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-register">
+</span>
+<span id="execution-results-POSTapi-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-register"></code></pre>
+</span>
+<form id="form-POSTapi-register" data-method="POST"
+      data-path="api/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-register"
+                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-register"
+                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-register"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-register"
+               data-component="body" required  hidden>
+    <br>
+<p>Must be a valid email address.</p>        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-register"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>confirm_password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="confirm_password"
+               data-endpoint="POSTapi-register"
+               data-component="body" required  hidden>
+    <br>
+<p>The value and <code>password</code> must match.</p>        </p>
+    
+    </form>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent">POST api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"clientPhoneNumber\": \"anvkpkdx\",
+    \"amount\": 206,
+    \"clientid\": 12,
+    \"rra_ref\": 18,
+    \"tin_no\": 7,
+    \"taxpayer_name\": \"illo\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "clientPhoneNumber": "anvkpkdx",
+    "amount": 206,
+    "clientid": 12,
+    "rra_ref": 18,
+    "tin_no": 7,
+    "taxpayer_name": "illo"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/rrataxpaymenent</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>clientPhoneNumber</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="clientPhoneNumber"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+                <p>
+            <b><code>amount</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="amount"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+               data-component="body" required  hidden>
+    <br>
+<p>Must be at least 1000.</p>        </p>
+                <p>
+            <b><code>clientid</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="clientid"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>rra_ref</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="rra_ref"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>tin_no</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="tin_no"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>taxpayer_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="taxpayer_name"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rrataxpaymenent"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation">POST api/client/vas/rest/v.0.0.2/meternumbervalidation</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/vas/rest/v.0.0.2/meternumbervalidation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"meterNumber\": \"adw\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/vas/rest/v.0.0.2/meternumbervalidation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "meterNumber": "adw"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation">
+</span>
+<span id="execution-results-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation"></code></pre>
+</span>
+<form id="form-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation" data-method="POST"
+      data-path="api/client/vas/rest/v.0.0.2/meternumbervalidation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation"
+                    onclick="tryItOut('POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation"
+                    onclick="cancelTryOut('POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/vas/rest/v.0.0.2/meternumbervalidation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>meterNumber</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="meterNumber"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-meternumbervalidation"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent">POST api/client/vas/rest/v.0.0.2/electricitypayemnent</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/vas/rest/v.0.0.2/electricitypayemnent" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"clientId\": \"non\",
+    \"msisdn\": \"uopcnhs\",
+    \"amount\": 165
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/vas/rest/v.0.0.2/electricitypayemnent"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "clientId": "non",
+    "msisdn": "uopcnhs",
+    "amount": 165
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent">
+</span>
+<span id="execution-results-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"></code></pre>
+</span>
+<form id="form-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent" data-method="POST"
+      data-path="api/client/vas/rest/v.0.0.2/electricitypayemnent"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"
+                    onclick="tryItOut('POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"
+                    onclick="cancelTryOut('POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/vas/rest/v.0.0.2/electricitypayemnent</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>clientId</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="clientId"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>msisdn</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="msisdn"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+                <p>
+            <b><code>amount</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="amount"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-electricitypayemnent"
+               data-component="body" required  hidden>
+    <br>
+<p>Must be at least 500.</p>        </p>
+    
+    </form>
+
+        <h1 id="ltss">LTSS</h1>
+
+    <p>API endpoints for managing LTSS</p>
+
+            <h2 id="ltss-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation">POST api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"identification\": \"nvapgovy\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "identification": "nvapgovy"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/ltssnidvalidation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>identification</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="identification"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-ltssnidvalidation"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.</p>        </p>
+    
+    </form>
+
+            <h2 id="ltss-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution">POST api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"identification\": \"utfdj\",
+    \"clientId\": \"eit\",
+    \"amount\": \"o\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "identification": "utfdj",
+    "clientId": "eit",
+    "amount": "o"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/ltsssendcontribution</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>identification</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="identification"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.</p>        </p>
+                <p>
+            <b><code>clientId</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="clientId"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 4 characters.</p>        </p>
+                <p>
+            <b><code>amount</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="amount"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-ltsssendcontribution"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 4 characters.</p>        </p>
+    
+    </form>
+
+        <h1 id="rnit">rnit</h1>
+
+    <p>API endpoints for managing rnit</p>
+
+            <h2 id="rnit-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation">Handle an incoming request.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rnitnidvalidation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"identification\": \"sunt\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rnitnidvalidation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "identification": "sunt"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/rnitnidvalidation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/rnitnidvalidation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>identification</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="identification"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rnitnidvalidation"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="rnit-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution">POST api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"nid\": \"placeat\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nid": "placeat"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/rnitsendcontribution</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nid</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="nid"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rnitsendcontribution"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+        <h1 id="rra-tax-collection">rra tax collection</h1>
+
+    
+
+            <h2 id="rra-tax-collection-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation">API endpoints for managing tax collection</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rradocidvalidation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"rra_ref\": \"cx\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/rradocidvalidation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "rra_ref": "cx"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/rradocidvalidation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/rradocidvalidation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>rra_ref</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="rra_ref"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-rradocidvalidation"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 30 characters. Must be at least 8 characters.</p>        </p>
+    
+    </form>
+
+        <h1 id="rssb-mutuelle-de-sante">rssb mutuelle de sante</h1>
+
+    <p>API endpoints for managing mutuelle de sante</p>
+
+            <h2 id="rssb-mutuelle-de-sante-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation">POST api/client/gvmnt/rest/v.0.0.2/cbhinidvalidation</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/cbhinidvalidation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"nid\": \"fk\",
+    \"yearofcollection\": 1
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/cbhinidvalidation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nid": "fk",
+    "yearofcollection": 1
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/cbhinidvalidation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/cbhinidvalidation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nid</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="nid"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.</p>        </p>
+                <p>
+            <b><code>yearofcollection</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="yearofcollection"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhinidvalidation"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="rssb-mutuelle-de-sante-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment">POST api/client/gvmnt/rest/v.0.0.2/cbhisendpayment</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/cbhisendpayment" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"clientPhone\": \"aqnt\",
+    \"amountPaid\": 398,
+    \"clientId\": 20,
+    \"nid\": \"ec\",
+    \"yearofcollection\": 3,
+    \"name\": \"possimus\",
+    \"invoice\": 15
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/gvmnt/rest/v.0.0.2/cbhisendpayment"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "clientPhone": "aqnt",
+    "amountPaid": 398,
+    "clientId": 20,
+    "nid": "ec",
+    "yearofcollection": 3,
+    "name": "possimus",
+    "invoice": 15
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment">
+</span>
+<span id="execution-results-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"></code></pre>
+</span>
+<form id="form-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment" data-method="POST"
+      data-path="api/client/gvmnt/rest/v.0.0.2/cbhisendpayment"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+                    onclick="tryItOut('POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+                    onclick="cancelTryOut('POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/gvmnt/rest/v.0.0.2/cbhisendpayment</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>clientPhone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="clientPhone"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+                <p>
+            <b><code>amountPaid</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="amountPaid"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+<p>Must be at least 1000.</p>        </p>
+                <p>
+            <b><code>clientId</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="clientId"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>nid</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="nid"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 16 characters. Must be at least 8 characters.</p>        </p>
+                <p>
+            <b><code>yearofcollection</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="yearofcollection"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>invoice</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="invoice"
+               data-endpoint="POSTapi-client-gvmnt-rest-v.0.0.2-cbhisendpayment"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+        <h1 id="starttimes">startTimes</h1>
+
+    <p>API endpoints for managing startTimes</p>
+
+            <h2 id="starttimes-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages">POST api/client/vas/rest/v.0.0.2/startimeReplaceable_packages</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/vas/rest/v.0.0.2/startimeReplaceable_packages" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"servicecode\": \"\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/vas/rest/v.0.0.2/startimeReplaceable_packages"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "servicecode": ""
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages">
+</span>
+<span id="execution-results-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages"></code></pre>
+</span>
+<form id="form-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages" data-method="POST"
+      data-path="api/client/vas/rest/v.0.0.2/startimeReplaceable_packages"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages"
+                    onclick="tryItOut('POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages"
+                    onclick="cancelTryOut('POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/vas/rest/v.0.0.2/startimeReplaceable_packages</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>servicecode</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="servicecode"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-startimeReplaceable_packages"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+    
+    </form>
+
+            <h2 id="starttimes-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos">POST api/client/vas/rest/v.0.0.2/startimeRecharge_infos</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/vas/rest/v.0.0.2/startimeRecharge_infos" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"servicecode\": \"\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/vas/rest/v.0.0.2/startimeRecharge_infos"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "servicecode": ""
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos">
+</span>
+<span id="execution-results-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos"></code></pre>
+</span>
+<form id="form-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos" data-method="POST"
+      data-path="api/client/vas/rest/v.0.0.2/startimeRecharge_infos"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos"
+                    onclick="tryItOut('POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos"
+                    onclick="cancelTryOut('POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/vas/rest/v.0.0.2/startimeRecharge_infos</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>servicecode</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="servicecode"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-startimeRecharge_infos"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+    
+    </form>
+
+            <h2 id="starttimes-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging">POST api/client/vas/rest/v.0.0.2/starTimeRecharging</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/client/vas/rest/v.0.0.2/starTimeRecharging" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"servicecode\": \"u\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/client/vas/rest/v.0.0.2/starTimeRecharging"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "servicecode": "u"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging">
+</span>
+<span id="execution-results-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging"></code></pre>
+</span>
+<span id="execution-error-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging"></code></pre>
+</span>
+<form id="form-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging" data-method="POST"
+      data-path="api/client/vas/rest/v.0.0.2/starTimeRecharging"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging"
+                    onclick="tryItOut('POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging"
+                    onclick="cancelTryOut('POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/client/vas/rest/v.0.0.2/starTimeRecharging</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>servicecode</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="servicecode"
+               data-endpoint="POSTapi-client-vas-rest-v.0.0.2-starTimeRecharging"
+               data-component="body" required  hidden>
+    <br>
+<p>Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.</p>        </p>
+    
+    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>
