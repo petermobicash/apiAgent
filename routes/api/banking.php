@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Finance\BankingTransactionController;
+use App\Http\Controllers\API\Finance\BankingTransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,6 @@ use App\Http\Controllers\API\coreBank414\Services\Finance\BankingTransactionCont
 |
 */
 
-Route::post('/banking/cash-in', [BankingTransactionController::class, 'cash_in']);
+Route::prefix('v1')->group(function () {
+    Route::post('banking/cash-ins', [BankingTransactionController::class, 'cash_in']);
+});

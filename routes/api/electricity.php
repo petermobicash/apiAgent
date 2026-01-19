@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\VAS\ElectricityPaymentController;
+use App\Http\Controllers\API\VAS\ElectricityPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +10,7 @@ use App\Http\Controllers\API\coreBank414\Services\VAS\ElectricityPaymentControll
 | Validates meter numbers and handles electricity payments.
 */
 
-Route::prefix('agent/vas/electricity/rest/v.4.14.01')->group(function () {
-    Route::get('meter-number-validation', [ElectricityPaymentController::class, 'cashPowerMeterNumberValidation']);
-    Route::post('payment', [ElectricityPaymentController::class, 'electricityPayment']);
+Route::prefix('v1')->group(function () {
+    Route::get('electricity/meter-number-validations', [ElectricityPaymentController::class, 'cashPowerMeterNumberValidation']);
+    Route::post('electricity/payments', [ElectricityPaymentController::class, 'electricityPayment']);
 });

@@ -1,71 +1,279 @@
-name: startTimes
+name: 'Insurance (RSSB)'
 description: |-
 
-  API endpoints for managing startTimes
+  API endpoints for managing mutuelle de sante
 endpoints:
   -
+    custom: []
     httpMethods:
       - POST
-    uri: api/client/vas/rest/v.0.0.2/startimeReplaceable_packages
+    uri: api/agent/utilities/user/rest/v.4.14.01/user-vaidation-by-admin
     metadata:
-      title: ''
-      description: ''
+      custom: []
+      groupName: 'Insurance (RSSB)'
+      groupDescription: |-
+
+        API endpoints for managing mutuelle de sante
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search for user by admin.'
+      description: |-
+        Refactored similarly: DI, error handling, validation, standardized responses.
+        Separated concerns by extracting authorization check.
       authenticated: false
+      deprecated: false
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
-    bodyParameters:
-      servicecode:
-        name: servicecode
-        description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
-        required: true
-        example: ''
-        type: string
-    responses: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"responseCode":400,"status":"Failed","message":"Authorization header is required"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '43'
+          vary: Origin
+        description: null
     responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
   -
+    custom: []
     httpMethods:
       - POST
-    uri: api/client/vas/rest/v.0.0.2/startimeRecharge_infos
+    uri: api/agent/utilities/user/rest/v.4.14.01/float-top-up-bpr-bank
     metadata:
-      title: ''
-      description: ''
+      custom: []
+      groupName: 'Insurance (RSSB)'
+      groupDescription: |-
+
+        API endpoints for managing mutuelle de sante
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle user float top-up for BPR bank.'
+      description: |-
+        Refactored to use DI, error handling, validation.
+        Note: This method doesn't require authorization based on original logic.
       authenticated: false
+      deprecated: false
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
-    bodyParameters:
-      servicecode:
-        name: servicecode
-        description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
-        required: true
-        example: ''
-        type: string
-    responses: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"responseCode":400,"status":"Failed","message":"Validation failed: The amount field is required."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '42'
+          vary: Origin
+        description: null
     responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
   -
+    custom: []
     httpMethods:
       - POST
-    uri: api/client/vas/rest/v.0.0.2/starTimeRecharging
+    uri: api/agent/utilities/user/rest/v.4.14.01/user-infos
     metadata:
-      title: ''
-      description: ''
+      custom: []
+      groupName: 'Insurance (RSSB)'
+      groupDescription: |-
+
+        API endpoints for managing mutuelle de sante
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search for user by username and determine if they are dependent or independent.'
+      description: |-
+        Refactored to use dependency injection, proper error handling, input validation, and standardized responses.
+        Follows Single Responsibility Principle by focusing only on this logic.
+        Improved readability by reducing method length and adding clear structure.
       authenticated: false
+      deprecated: false
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
-    bodyParameters:
-      servicecode:
-        name: servicecode
-        description: 'Must contain only letters and numbers. Must not be greater than 12 characters. Must be at least 10 characters.'
-        required: true
-        example: u
-        type: string
-    responses: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"responseCode":400,"status":"Failed","message":"Authorization header is required"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '41'
+          vary: Origin
+        description: null
     responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/agent/utilities/user/rest/v.4.14.01/view-by-transaction-id
+    metadata:
+      custom: []
+      groupName: 'Insurance (RSSB)'
+      groupDescription: |-
+
+        API endpoints for managing mutuelle de sante
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'View transaction by ID.'
+      description: 'Refactored with DI, authorization check, validation, error handling.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"responseCode":400,"status":"Failed","message":"Authorization header is required"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '40'
+          vary: Origin
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/agent/utilities/user/rest/v.4.14.01/account-balance
+    metadata:
+      custom: []
+      groupName: 'Insurance (RSSB)'
+      groupDescription: |-
+
+        API endpoints for managing mutuelle de sante
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get agent account summary.'
+      description: |-
+        Refactored with DI, error handling.
+        Complex logic extracted to private method for SRP.
+        Removed commented code for cleanliness.
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"responseCode":105,"status":"FAILURE","communicationStatus":"FAILURE","codeDescription":"Data validation(Authorization please)","data":null,"responseDate":"2026-01-13 22:45:30"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '39'
+          vary: Origin
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/agent/utilities/user/rest/v.4.14.01/commission-selfserve
+    metadata:
+      custom: []
+      groupName: 'Insurance (RSSB)'
+      groupDescription: |-
+
+        API endpoints for managing mutuelle de sante
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle agent commission withdrawal.'
+      description: 'Refactored with DI, error handling, validation.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"responseCode":105,"status":"FAILURE","communicationStatus":"FAILURE","codeDescription":"Data validation(Authorization please)","data":"","responseDate":"2026-01-13 22:45:31"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '38'
+          vary: Origin
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

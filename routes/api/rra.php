@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Governement\RraTaxCollectionController;
+use App\Http\Controllers\API\Government\RraTaxCollectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,8 +10,8 @@ use App\Http\Controllers\API\coreBank414\Services\Governement\RraTaxCollectionCo
 | Handles RRA document validation and tax payments.
 */
 
-Route::prefix('agent/goverment-services/rra/rest/v.4.14.01')->group(function () {
-    Route::get('doc-id-validation', [RraTaxCollectionController::class, 'rraDocIdValidation']);
-    Route::post('payment', [RraTaxCollectionController::class, 'rraTaxPayment']);
-    Route::post('payment-individual-client', [RraTaxCollectionController::class, 'rraTaxPaymentIndividualClients']);
+Route::prefix('v1')->group(function () {
+    Route::get('rra/doc-id-validations', [RraTaxCollectionController::class, 'rraDocIdValidation']);
+    Route::post('rra/payments', [RraTaxCollectionController::class, 'rraTaxPayment']);
+    // Route::post('rra/payments/individual-client', [RraTaxCollectionController::class, 'rraTaxPaymentIndividualClients']);
 });

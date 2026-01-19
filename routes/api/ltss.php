@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Governement\LtssContributionController;
+use App\Http\Controllers\API\Government\LtssContributionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +10,7 @@ use App\Http\Controllers\API\coreBank414\Services\Governement\LtssContributionCo
 | Handles LTSS identification and contributions.
 */
 
-Route::prefix('agent/goverment-services/ltss/rest/v.4.14.01')->group(function () {
-    Route::get('identification-validation', [LtssContributionController::class, 'nidLtssValidation']);
-    Route::post('payment', [LtssContributionController::class, 'ltssSendContribution']);
+Route::prefix('v1')->group(function () {
+    Route::get('ltss/identification-validations', [LtssContributionController::class, 'nidLtssValidation']);
+    Route::post('ltss/payments', [LtssContributionController::class, 'ltssSendContribution']);
 });

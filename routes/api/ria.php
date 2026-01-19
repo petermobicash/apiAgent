@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Remittances\RiaTransactionController;
+use App\Http\Controllers\API\Remittances\RiaTransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +10,7 @@ use App\Http\Controllers\API\coreBank414\Services\Remittances\RiaTransactionCont
 | Handles international money transfer services via RIA.
 */
 
-Route::prefix('agent/remittance/ria/rest/v.4.14.01')->group(function () {
-    Route::post('validate', [RiaTransactionController::class, 'validateTransaction']);
-    Route::post('pay', [RiaTransactionController::class, 'payTransaction']);
+Route::prefix('v1')->group(function () {
+    Route::post('ria/validations', [RiaTransactionController::class, 'validateTransaction']);
+    Route::post('ria/payments', [RiaTransactionController::class, 'payTransaction']);
 });

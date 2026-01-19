@@ -44,4 +44,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the merchant account associated with the user.
+     */
+    public function merchantAccount()
+    {
+        return $this->hasOne(MerchantAccount::class, 'mobicore_user_id');
+    }
 }

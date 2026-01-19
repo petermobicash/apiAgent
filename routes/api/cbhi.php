@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Governement\CbhipaymentController;
+use App\Http\Controllers\API\Government\CbhipaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -9,7 +9,9 @@ use App\Http\Controllers\API\coreBank414\Services\Governement\CbhipaymentControl
 |--------------------------------------------------------------------------
 */
 
-Route::post('/cbhi/nid-details', [CbhipaymentController::class, 'niddetails']);
-Route::post('/cbhi/payment/agent', [CbhipaymentController::class, 'cbhiMutuellePaymentDependentAgent']);
-Route::post('/cbhi/payment/individual', [CbhipaymentController::class, 'cbhiMutuellePaymentIndividualClients']);
-Route::post('/cbhi/collection/daily', [CbhipaymentController::class, 'cbhiDailyCollection']);
+Route::prefix('v1')->group(function () {
+    Route::post('cbhi/nid-details', [CbhipaymentController::class, 'niddetails']);
+    Route::post('cbhi/payments/agent', [CbhipaymentController::class, 'cbhiMutuellePaymentDependentAgent']);
+    Route::post('cbhi/payments/individual', [CbhipaymentController::class, 'cbhiMutuellePaymentIndividualClients']);
+    Route::post('cbhi/collections/daily', [CbhipaymentController::class, 'cbhiDailyCollection']);
+});

@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use App\Exceptions\MobicoreApiException;
 
 class Handler extends ExceptionHandler
 {
@@ -27,15 +28,22 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
-    }
+        /**
+         * Register the exception handling callbacks for the application.
+         *
+         * @return void
+         */
+        public function register(): void
+        {
+            $this->reportable(function (Throwable $e): void {
+                //
+            });
+    
+            $this->renderable(function (MobicoreApiException $e, $request) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $e->getMessage(),
+                ], $e->getStatusCode());
+            });
+        }
 }

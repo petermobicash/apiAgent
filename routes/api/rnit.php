@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Governement\RnitCotisationController;
+use App\Http\Controllers\API\Government\RnitContributionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +10,7 @@ use App\Http\Controllers\API\coreBank414\Services\Governement\RnitCotisationCont
 | Handles RNIT identification and contribution submission.
 */
 
-Route::prefix('agent/goverment-services/rnit/rest/v.4.14.01')->group(function () {
-    Route::get('identification-validation', [RnitCotisationController::class, 'nidrnitNidvalidation']);
-    Route::post('payment', [RnitCotisationController::class, 'rnitSendContribution']);
+Route::prefix('v1')->group(function () {
+    Route::get('rnit/identification-validations', [RnitContributionController::class, 'nidrnitNidvalidation']);
+    Route::post('rnit/payments', [RnitContributionController::class, 'rnitSendContribution']);
 });

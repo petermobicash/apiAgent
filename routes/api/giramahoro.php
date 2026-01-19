@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\coreBank414\Services\Programs\GiramahoroController;
+use App\Http\Controllers\API\VAS\GiramahoroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +10,7 @@ use App\Http\Controllers\API\coreBank414\Services\Programs\GiramahoroController;
 | Provides services related to the Giramahoro social support program.
 */
 
-Route::prefix('agent/programs/giramahoro/rest/v.4.14.01')->group(function () {
-    Route::get('beneficiary-validation', [GiramahoroController::class, 'validateBeneficiary']);
-    Route::post('payment', [GiramahoroController::class, 'disburseSupport']);
+Route::prefix('v1')->group(function () {
+    Route::get('giramahoro/beneficiary-validations', [GiramahoroController::class, 'validateBeneficiary']);
+    Route::post('giramahoro/payments', [GiramahoroController::class, 'disburseSupport']);
 });
